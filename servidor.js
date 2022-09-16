@@ -4,7 +4,13 @@ const productos = []
 app.use(express.urlencoded( {extended: true}));
 app.use(express.json());
 const DB = new db("data");
-  
+
+app.set('views', './views');
+app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
+app.get('/hello', (res,req) =>{
+  res.prependListener('hello.pug',{mensaje: 'usando pug js en express'});
+})
 app.get("/productos", async (req, res) => {
   const data = await DB.getAllProduct();
   return res.send(data);
