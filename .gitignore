@@ -1,4 +1,10 @@
 # Ignora la carpeta node_modules
 node_modules
 
+# Oculte el front pq todavia no lo termine
+/*front
+
+/*views
+
+
 
